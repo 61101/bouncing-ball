@@ -25,7 +25,7 @@ int main() {
         // Sine returns a number between -1 and 1.
         // Multiplying inside parentheses controls rate of change.
         // Multiplying outside parentheses controls magnitude.
-        // Adding an offset greater than or equal to the magnitude is used to keep the number positive (because the cursor's location can't be negative).
+        // Adding an offset equal to the magnitude is used to keep the number positive (because the cursor's location can't be negative).
         x = (sin(i * 1) * xMag/2) + xMag/2;
         y = (sin(i * 4) * yMag/2) + yMag/2;
         
