@@ -30,7 +30,7 @@ int main() {
         y = (sin(i * 4) * yMag/2) + yMag/2;
         
         // Here, cout prints the ball at the correct position and draws a dotted line as the floor.
-        // Normally, cout only prints when the program finishes or when "endl" is used; flush tells it to print right away.
+        // Normally, cout only prints when the program finishes or after a line break; flush tells it to print right away.
         // Without flush, the output will be delayed until the program finishes (which will never happen in this case) or the character limit is exceeded.
         cout << location(x, y) << 'O' << location(0, yMag) << string(xMag, '-') << flush;
         wait(1);
