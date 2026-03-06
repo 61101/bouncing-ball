@@ -36,7 +36,7 @@ int main() {
         wait(1);
         cls;
         
-        // i increases slowly to create a smooth sine curve.
+        // "i" increases slowly to create a smooth sine curve.
         i += 0.001;
         
     }
