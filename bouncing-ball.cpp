@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-#include <cmath> // Needed for mathematical functions (sin and abs)
+#include <cmath> // Needed for mathematical functions
 #include <thread> // Needed for wait macro
 #include <chrono> // Needed for wait macro
 
@@ -18,24 +18,26 @@ int main() {
     
     float i = 0;
     int x, y;
+    int xMag = 100, yMag = 30;
     
     while (true) {
         
-        // Sin returns a number between -1 and 1.
-        // The abs function is used to get the absolute value of sin (because the cursor's location can't be negative).
+        // Sine returns a number between -1 and 1.
         // Multiplying inside parentheses controls rate of change.
         // Multiplying outside parentheses controls magnitude.
-        x = abs(sin(i)) * 20;
-        y = abs(sin(i * 4)) * 10;
+        // Adding an offset greater than or equal to the magnitude is used to keep the number positive (because the cursor's location can't be negative).
+        x = (sin(i * 1) * xMag/2) + xMag/2;
+        y = (sin(i * 4) * yMag/2) + yMag/2;
         
+        // Cout here prints the ball at the correct position and draws a dotted line as the floor.
         // Normally, cout only prints when the program finishes or when "endl" is used; flush tells it to print right away.
         // Without flush, the output will be delayed until the program finishes (which will never happen in this case) or the character limit is exceeded.
-        cout << location(x, y) << '*' << flush;
-        wait(50);
+        cout << location(x, y) << 'O' << location(0, yMag) << string(xMag, '-') << flush;
+        wait(1);
         cls;
         
-        // i slowly increases to create a smooth sine curve.
-        i += 0.1;
+        // i increases slowly to create a smooth sine curve.
+        i += 0.001;
         
     }
     
