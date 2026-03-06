@@ -20,7 +20,7 @@ int main() {
     int x, y;
     int xMag = 100, yMag = 30;
     
-    while (true) {
+    while (false) {
         
         // Sine returns a number between -1 and 1.
         // Multiplying inside parentheses controls rate of change.
