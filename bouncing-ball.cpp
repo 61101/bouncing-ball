@@ -26,13 +26,14 @@ int main() {
         // Multiplying inside parentheses controls rate of change.
         // Multiplying outside parentheses controls magnitude.
         // Adding an offset equal to the magnitude is used to keep the number positive (because the cursor's location can't be negative).
-        x = (sin(i * 1) * xMag/2) + xMag/2;
-        y = (sin(i * 4) * yMag/2) + yMag/2;
+        x = sin(i*1) * xMag/2 + xMag/2;
+        y = sin(i*4) * yMag/2 + yMag/2;
         
         // Here, cout prints the ball at the correct position and draws a dashed line as the floor.
+        // Terminal rows and columns start at 1, not 0, so +1 is added to keep the ball within bounds.
         // Normally, cout only prints when the program finishes or after a line break; flush tells it to print right away.
         // Without flush, the output will be delayed until the program finishes (which will never happen in this case) or the character limit is exceeded.
-        cout << location(x, y) << 'O' << location(0, yMag) << string(xMag, '-') << flush;
+        cout << location(x+1, y+1) << 'O' << location(1, yMag+1) << string(xMag, '-') << flush;
         wait(1);
         cls;
         
